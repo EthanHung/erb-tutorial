@@ -1,0 +1,5 @@
+position
+flex box
+pseudo code (before/after)
+media query
+bootstrap

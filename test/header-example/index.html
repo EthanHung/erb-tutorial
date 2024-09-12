@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .top-notification {
+            text-align: center;
+            background-color: #563d7c;
+            padding: 8px 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        li {
+            display: inline-block;
+        }
+
+        header {
+            background-color: #7952b3;
+            width: 100%;
+            padding: 12px 0;
+        }
+        
+        .link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .right-ele {
+            display: inline-block;
+            width: 20%;
+            text-align: right;
+        }
+
+        .header-icon {
+            width: 10%;
+            display: inline-block;
+        }
+        
+        .header-link-list {
+            width: 69%;
+        }
+
+    </style>
+
+    <script>
+        /*
+        var x = 'he jko;hkjip;  ikjophjk;l hjlnhllo';
+        x = "n";
+        x = `123132`; //string
+        x = 123132;
+        x = true; //boolean
+        x = false; //boolean
+        x = chineseSubjectScore + engSubjectScore;
+        */
+
+        var chineseSubjectScore = 80; // number
+        var engSubjectScore = 80;
+        /*
+        if (chineseSubjectScore > engSubjectScore) {
+            console.log('Chinese Subject is higher than English subject');
+        } else {
+            console.log('English Subject is higher than or equal Chinese subject');
+        }
+        */
+        
+        /*
+        if (chineseSubjectScore > engSubjectScore) {
+            console.log('Chinese Subject is higher than English subject');
+        } else {
+            console.log('English Subject is higher than or equal Chinese subject');
+        }
+        */
+
+
+        
+        var newScore = "100";
+        // console.log(newScore + score);
+
+        /*
+        score < 40 = grade F
+        score <= 60 = grade E
+        score > 60 = grade D
+        score > 70 = grade C
+        score > 80 = grade B
+        score > 90 = grade A
+        */
+        /*
+        var score = 88;
+        if (score < 40) {
+            console.log('grade F');
+        } else if (score <= 60) {
+            console.log('grade E');
+        } else if (score <= 70) {
+            console.log('grade D');
+        } else if (score <= 80) {
+            console.log('grade C');
+        } else if (score <= 89) {
+            console.log('grade B');
+        } else {
+            console.log('grade A');
+        }
+
+        switch (score) {
+            case 40:
+                console.log('grade F');
+                console.log('grade F');
+                console.log('grade F');
+                break;
+            case 50:
+                console.log('grade E');
+                console.log('grade E');
+                console.log('grade E');
+                console.log('grade E');
+                console.log('grade E');
+                break;
+            default:
+                console.log('default E');
+                break;
+        }
+        */
+        /*
+        console.log(1);
+        console.log(2);
+        console.log(3);
+        console.log(4);
+        console.log(5);
+        console.log(6);
+        console.log(7);
+        console.log(8);
+        console.log(9);
+        console.log(10);
+        */
+
+        /*
+        debugger;
+        for (var i = 1; i <= 11; i++) {
+            i = i + 1;
+            console.log(i);
+        }
+        */
+        /*
+        var i = 0;
+        while (i < 5) {
+            console.log(i);
+            i++;
+        }
+        */
+        /*
+        debugger;
+        var gamePlaying = true;
+        var isDied = false;
+        var i = 0;
+
+        while (gamePlaying) {
+            console.log(i);
+            if (i < 10) {
+                i++;
+            }
+
+            if (i == 10) {
+                isDied = true;
+            }
+
+            if (isDied == true) {
+                gamePlaying = false;
+            }
+        }
+        */
+        /*
+        var i = 0;
+        do {
+            console.log(i);
+            i++;
+        } while (i < 5);
+        */
+
+        /*
+        for (var i = 0; i < 5; i++) {
+            console.log("for loop: " + i);
+        }
+
+        var i = 0;
+        while (i < 5) {
+            console.log("while loop: " + i);
+            i++;
+        }
+        */
+
+        function playingGame () {
+            var gamePlaying = true;
+            var isDied = false;
+            var i = 0;
+    
+            while (gamePlaying) {
+                console.log(i);
+                if (i < 10) {
+                    anotherFunction();
+                    i++;
+                }
+    
+                if (i == 10) {
+                    isDied = true;
+                }
+    
+                if (isDied == true) {
+                    gamePlaying = false;
+                }
+            }
+        }
+
+        function anotherFunction () {
+            console.log('anotherFunction');
+        }
+        
+        var saveUser = null;
+
+        var firstName = "";
+        var lastName = "";
+
+        /*
+        function saveUser (firstName, lastName) {
+            console.log('saveUser');
+        }
+        saveUser(firstName, "hi");
+        */
+
+        var sumValue;
+        sumValue = sum(4,5);
+        // console.log('sum(1, 2)', sum(1, 2));
+        // console.log('sumValue', sumValue);
+
+        // array
+        var array = [
+            1,                 // 0
+            23,                // 1
+            456,               // 2
+            sumValue,          // 3
+            sum(5,20),         // 4
+            add()              // 5
+        ];
+        array[5]
+        // function/object {}
+        
+        function add(a = 5, b = 123) { return a + b; }
+        // console.log(add());
+        
+         // ref to a = 10, b = 123 ALWAYS refer to first param.
+        // console.log(add(10));
+
+        function sum (a, b) {
+            /*
+            console.log('sum');
+            console.log('a', a);
+            console.log('b', b);
+            */
+
+            var result = a + b;
+            return result;
+        }
+
+
+
+        /*
+        var a = 10;
+        if (a == 0) {
+            playingGame();
+        }
+
+        playingGame();
+        playingGame();
+        playingGame();
+
+        for (var i = 0; i < 4 ; i++) {
+            playingGame();
+        }
+        */
+
+        /*
+        var car = {
+            model: 'benz',
+            year: 2024,
+            seat: [
+                "副駕",
+                "主駕",
+                "副駕後座",
+                "主駕後座",
+            ],
+            start: function() {
+                console.log('start!!');
+            },
+            run: function(value) {
+                console.log('run!! ' + value + " miles");
+            }
+        };
+
+        car.start();
+        car.run(123);
+        car.year;
+
+        var book = {
+            content: car
+        };
+        book['content'] = "Hello";
+        book.content = "Hello";
+        console.log('book', book);
+        */
+    </script>
+</head>
+<body>
+    <div class="top-notification">
+        <a class="top-notification-link link" href="#">
+            There's a newer version of Bootstrap!
+        </a>
+    </div>
+    <header id="demo">
+        <div class="header-icon">
+            <a href="#" class="link">
+                icon
+            </a>
+        </div>
+
+        <ul class="header-link-list">
+            <li>
+                <a href="#" class="link">Home</a>
+            </li>
+            <li>
+                <a href="#" class="link">Docs</a>
+            </li>
+            <li>
+                <a href="#" class="link">Examples</a>
+            </li>
+            <li>
+                <a href="#" class="link">Icons</a>
+            </li>
+            <li>
+                <a href="#" class="link">Themes</a>
+            </li>
+            <li>
+                <a href="#" class="link">Blog</a>
+            </li>
+        </ul>
+        <div class="right-ele">
+            <ul>
+                <li>
+                    <a href="#" class="link">github</a>
+                </li>
+                <li>
+                    <a href="#" class="link">x</a>
+                </li>
+                <li>
+                    <a href="#" class="link">opencollective</a>
+                </li>
+            </ul>
+            <a href="#" class="btn btn-dowload border border-1 border-warning text-warning text-decoration-none p-2 rounded">
+                Download
+            </a>
+            <style>
+                /*
+                a {
+                    border: 1px solid yellow;
+                    color: yellow;
+                    text-decoration: none;
+                    padding: 8px;
+                    border-radius: 4px;
+                }
+                */
+            </style>
+        </div>
+    </header>
+    <script src="script.js"></script>
+</body>
+</html>
