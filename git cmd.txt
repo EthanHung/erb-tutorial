@@ -1,0 +1,28 @@
+# go to the project root folder
+
+# init the git
+git init
+
+# add the file into git
+git add .
+git add example.txt
+
+# commit should be sticky with add
+git commit -m "your commit message"
+
+# pull = git fetch + merge
+git pull
+
+# not too often
+git fetch
+git branch
+git checkout
+git checkout -b
+git merge
+
+
+1. check your location (which branch)
+2. git pull
+3. git add . /git add your-new-file.html
+4. git commit
+5. git push
