@@ -1,4 +1,5 @@
 import Image from "next/image";
+import './globals.css';
 
 export default function Home() {
   const h1 = <h1>Test!</h1>;
