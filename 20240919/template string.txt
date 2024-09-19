@@ -1,0 +1,10 @@
+let str = 'Hello';
+let str1 = '!';
+
+let msg = str + ' ' + 'world ' + str1;
+
+let message = `${str} world ${str1}`;
+
+console.log('msg', msg)
+console.log('message', message)
+console.log('is same data?', msg === message)
