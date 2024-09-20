@@ -1,6 +1,6 @@
 import { UserProfile } from './components/UserProfile';
 import '../../app/globals.css';
-
+import { useEffect } from 'react';
 const UserList = () => {
     const profiles = [
         {
