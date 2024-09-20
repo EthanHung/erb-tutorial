@@ -12,22 +12,59 @@ const FakeApiCall = () => {
             return res.json();
         })
         .then(function (data) {
-            console.log('data', data);
-            setProducts(data);
+            const result = [];
+            
+            // for (let i = 0 ; i < data.length;  i += 3) {
+            //     let dataBlock0 = data[i];
+            //     let dataBlock1 = data[i+1]
+            //     let dataBlock2 = data[i+2]
+
+            //     result.push(
+            //         <div className="row">
+            //             {
+            //                 dataBlock0 && <ProductHolder productData={dataBlock0} />
+            //             }
+            //             {
+            //                 dataBlock1 && <ProductHolder productData={dataBlock1} />
+            //             }
+            //             {
+            //                 dataBlock2 && <ProductHolder productData={dataBlock2} />
+            //             }
+            //         </div>
+            //     );
+            // }
+
+            let tempAry = [];
+            data.forEach((product, i) => {
+
+                if (i % 3 === 0) {
+                    
+                    const tempData = [];
+                    
+                    tempAry.forEach((itm) => {
+                        tempData.push(<ProductHolder productData={itm} />);
+                        result.push(<div className='row'>{tempData}</div>);
+                    });
+
+                    tempAry = [];
+                }
+                
+                tempAry.push(product);
+            });
+
+            setProducts(result);
         });
     }, []);
 
     return (
         <div className="container" id="products">
-            <div className="row">
-                {
-                    products.map((product, i) => {
-                        return <ProductHolder key={i} productData={product} />;
-                    })
-                }
-            </div>
+        {
+            products.map((product, i) => {
+                return <div key={i}>{product}</div>;
+            })
+        }
         </div>
-    );
+    )
 }
 
 export default FakeApiCall;
