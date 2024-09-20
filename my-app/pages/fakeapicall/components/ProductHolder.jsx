@@ -2,7 +2,7 @@ const ProductHolder = (propsData) => {
     const props = propsData.productData;
     
     return (
-        <div className="col border border-danger rounded-1 p-2 col-4">
+        <div className="col border border-danger rounded-1 m-2">
             <div className="item-container p-3">
                 <img className="item-icon ratio ratio-1x1"
                     src={props.image}
