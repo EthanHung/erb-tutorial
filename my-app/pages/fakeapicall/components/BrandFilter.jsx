@@ -7,31 +7,49 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 const data = [
     {
         brandName: 'Giorgio',
-        iteamCount: 1,
-    }
+        itemCount: 1,
+    },
     {
-        brandName: 'Lacouts',
-        iteamCount: 1,
-    }
+        brandName: 'Lacoste',
+        itemCount: 1,
+    },
     {
         brandName: 'Prada',
-        iteamCount: 1,
-    }
+        itemCount: 1,
+    },
     {
         brandName: 'Zara',
-        iteamCount: 2,
-    }
+        itemCount: 2,
+    },
 ];
+
 
 const BrandFilter = () => {
     return (
-        {
-            data.map ((item, i) => {
-                return  (
-                    FormControlLabel control={<Checkbox defaultChecked />} label="Label" />
-                label = {`${data[0].brandName ( $data[0].itemCount)}`});
-            )}
-        }
-        )
-    }
-            export default BrandFilter;
+        data.map((item, i) => {
+            return (
+                <FormControlLabel
+                    key={i}
+                    control={<Checkbox />}
+                    label={`${item.brandName} (${item.itemCount})`}
+                />
+            );
+        })
+    );
+};
+
+export default BrandFilter;
+
+// const BrandFilter = () => {
+//     return (
+//             data.map ((item, i) => {
+//                 return  (
+//                     <FormControlLabel key={i}
+//                     control={<Checkbox defaultChecked />} 
+//                     label = {`${data[0].brandName} ($data[0].itemCount)}`}
+//                     />
+//             );
+//         };
+//     );
+// };
+//             export default BrandFilter;

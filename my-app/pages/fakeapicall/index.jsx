@@ -11,10 +11,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import ColorFilter from './components/ColorFilter';
 import BrandFilter from './components/BrandFilter';
+import CatagoryFilter from './components/CategoryFilter';
 
 
 const FakeApiCall = () => {
     const [products, setProducts] = useState([]);
+    const [productData, setProductData] = useState([]);
     useEffect(() => {
 
         fetch('https://fakestoreapi.com/products', {
@@ -77,7 +79,21 @@ const FakeApiCall = () => {
     return (
         <div className="container" id="products">
 
-<Accordion>
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2-content"
+                    id="panel2-header"
+                >
+                    Category
+                </AccordionSummary>
+                <AccordionDetails>
+                    <CategoryFilter />
+                </AccordionDetails>
+            </Accordion>
+
+
+            <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2-content"
@@ -86,7 +102,7 @@ const FakeApiCall = () => {
                     Brand
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ColorFilter />
+                    <BrandFilter />
                 </AccordionDetails>
             </Accordion>
 
