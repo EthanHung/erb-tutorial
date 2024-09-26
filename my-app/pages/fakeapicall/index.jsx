@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react';
 import ProductHolder from './components/ProductHolder';
-import SizeFilter from './components/SizeFilter';
-import ColorFilter from './components/ColorFilter';
 import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
@@ -10,6 +8,10 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
+
+import SizeFilter from './components/SizeFilter';
+import ColorFilter from './components/ColorFilter';
+import BrandFilter from './components/BrandFilter';
 
 
 const FakeApiCall = () => {
@@ -76,7 +78,19 @@ const FakeApiCall = () => {
     return (
         <div className="container" id="products">
 
-            <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls autoPlay loop ></video>
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                >
+                    Brand
+                </AccordionSummary>
+                <AccordionDetails>
+                    <BrandFilter />
+                </AccordionDetails>
+            </Accordion>
+
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -86,16 +100,10 @@ const FakeApiCall = () => {
                     Color
                 </AccordionSummary>
                 <AccordionDetails>
-                    {/* color component...
-                    <Button
-                        sx={{
-                            backgroundColor: 'black',
-                            color: 'white',
-                        }}
-                    >Secondary</Button> */}
                     <ColorFilter />
                 </AccordionDetails>
             </Accordion>
+
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
