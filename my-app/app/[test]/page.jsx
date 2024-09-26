@@ -8,5 +8,5 @@
 
 export default function Page({ params }) {
     console.log('params', params)
-    return <h1>Hello, Home page!</h1>
+    return <h1 className="text-red-800">Hello, Home page!</h1>
   }

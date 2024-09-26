@@ -26,11 +26,18 @@ export function Profile({item, score}) { // { item } = props
 
 export function Counter () {
   const [counter, setCounter] = useState(0);
+  let testCounter = 0;
+  const click = () => {
+    testCounter = testCounter + 1;
+    setCounter(counter + 1);
+    console.log('testCounter', testCounter)
+  };
 
   return (
     <>
-      <p>Counter: {counter}</p>  
-      <button onClick={() => setCounter(counter + 1)} >click me to change the counter</button>
+      <p>Counter: {counter}</p>
+      <p>test Counter: {testCounter}</p>
+      <button onClick={click} >click me to change the counter</button>
     </>
   );
 }
@@ -66,11 +73,11 @@ export default function AboutUs() {
     return (
       <div>
         <Counter />
-        {title}
+        {/* {title}
         { `${currentDate.toDateString()}`}
         <div>{ sum(1, 2) }</div>
 
-        { users.map(user => <Profile item={user} score={10}/>) }
+        { users.map((user, i) => <Profile key={i} item={user} score={10}/>) } */}
       </div>
     );
   }
