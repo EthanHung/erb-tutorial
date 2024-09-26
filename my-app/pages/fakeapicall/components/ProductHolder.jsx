@@ -1,10 +1,14 @@
+import Image from 'next/image';
+
 const ProductHolder = ({productData}) => {
     return (
         <div className="col border border-danger rounded-1 m-2">
             <div className="item-container p-3">
-                <img className="item-icon ratio ratio-1x1"
+                <Image className="item-icon ratio ratio-1x1"
                     src={productData.image}
-                    alt={productData.title} />
+                    alt={productData.title}
+                    width={100}
+                    height={100} />
                 <div className="item-title fs-3 pt-3">
                 {productData.title}
                 </div>

@@ -1,5 +1,6 @@
 import SumValue, {sum} from './sum';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export function User() {}
 export function UserImage() {}
@@ -10,14 +11,12 @@ export function Profile({item, score}) { // { item } = props
   return (
     <>
       <h1>{item.name}</h1>
-      <img
+      <Image
         className="avatar"
         src={item.imageUrl}
         alt={'Photo of ' + item.name}
-        style={{
-          width: item.imageSize,
-          height: item.imageSize
-        }}
+        width={item.imageSize}
+        height={item.imageSize}
       />
     </>
   );

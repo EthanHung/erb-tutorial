@@ -11,13 +11,16 @@ function Profile() {
   );
 }
 */
+import Image from 'next/image';
 
 function Profile({src, name}) {
   return (
-    <a href="#">
-      <img
+    <a href="#" key={name}>
+      <Image
         src={src}
         alt={name}
+        width={100}
+        height={100}
       />
       <div>{name}</div>
     </a>
