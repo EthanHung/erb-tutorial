@@ -1,5 +1,6 @@
 import SumValue, {sum} from './sum';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export function User({ userInformation }) {
   const userImage = {
@@ -20,7 +21,7 @@ export function User({ userInformation }) {
 }
 
 export function UserImage({image}) {
-  return <img src={image.src} alt={image.name} />;
+  return <Image src={image.src} alt={image.name} width={100} height={100} />;
 }
 
 export function UserName({name}) {
@@ -58,14 +59,12 @@ export function Profile({item, score}) { // { item } = props
   return (
     <>
       <h1>{item.name}</h1>
-      <img
+      <Image
         className="avatar"
         src={item.imageUrl}
         alt={'Photo of ' + item.name}
-        style={{
-          width: item.imageSize,
-          height: item.imageSize
-        }}
+        width={item.imageSize}
+        height={item.imageSize}
       />
     </>
   );

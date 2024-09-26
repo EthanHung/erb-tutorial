@@ -12,10 +12,18 @@ import Button from '@mui/material/Button';
 import SizeFilter from './components/SizeFilter';
 import ColorFilter from './components/ColorFilter';
 import BrandFilter from './components/BrandFilter';
+import CategoriesFilter from './components/CategoriesFilter';
+import { Box } from '@mui/material';
 
+function removeDuplicates(arr) {
+    return arr.filter((item, index) => arr.indexOf(item) === index);
+}
 
 const FakeApiCall = () => {
     const [products, setProducts] = useState([]);
+    const [productData, setProductData] = useState([]);
+    const [productCategory, setProductCategory] = useState([]);
+
     useEffect(() => {
 
         fetch('https://fakestoreapi.com/products', {
@@ -27,6 +35,19 @@ const FakeApiCall = () => {
             .then(function (data) {
                 const result = [];
                 console.log('data', data)
+                
+                setProductData(data);
+
+                const category = removeDuplicates(data.map(item => item.category));
+
+                setProductCategory(
+                    category.map((item, i) => {
+                        return {
+                            name: item,
+                            link: `/category/${i + 1}`
+                        };
+                    })
+                );
 
                 for (let i = 0; i < data.length; i += 3) {
                     let dataBlock0 = data[i];
@@ -49,35 +70,48 @@ const FakeApiCall = () => {
                 }
                 setProducts(result)
 
+/*
+                let tempAry = [];
+                data.forEach((product, i) => {
 
-                // let tempAry = [];
-                // data.forEach((product, i) => {
+                    if (i % 3 === 0) {
 
-                //     if (i % 3 === 0) {
+                        const tempData = [];
 
-                //         const tempData = [];
+                        tempAry.forEach((itm) => {
+                            tempData.push(<ProductHolder productData={itm} />);
+                            result.push(<div className='row'>{tempData}</div>);
+                        });
 
-                //         tempAry.forEach((itm) => {
-                //             tempData.push(<ProductHolder productData={itm} />);
-                //             result.push(<div className='row'>{tempData}</div>);
-                //         });
+                        tempAry = [];
+                    }
 
-                //         tempAry = [];
-                //     }
+                    tempAry.push(product);
+                });
 
-                //     tempAry.push(product);
-                // });
+                console.log(result);
 
-                // console.log(result);
-
-                // setProducts(result);
-
+                setProducts(result);
+                */
             });
     }, []);
 
     return (
         <div className="container" id="products">
-
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                >
+                    Category
+                </AccordionSummary>
+                <AccordionDetails>
+                    {
+                        productCategory.map(item => <CategoriesFilter categoryData={item} />)
+                    }
+                </AccordionDetails>
+            </Accordion>
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
