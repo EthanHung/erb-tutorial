@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react';
 import ProductHolder from './components/ProductHolder';
 import SizeFilter from './components/SizeFilter';
+import ColorFilter from './components/ColorFilter';
 import * as React from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionActions from '@mui/material/AccordionActions';
@@ -75,6 +76,7 @@ const FakeApiCall = () => {
     return (
         <div className="container" id="products">
 
+            <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls autoPlay loop ></video>
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -84,7 +86,14 @@ const FakeApiCall = () => {
                     Color
                 </AccordionSummary>
                 <AccordionDetails>
-                    color component...
+                    {/* color component...
+                    <Button
+                        sx={{
+                            backgroundColor: 'black',
+                            color: 'white',
+                        }}
+                    >Secondary</Button> */}
+                    <ColorFilter />
                 </AccordionDetails>
             </Accordion>
             <Accordion>
