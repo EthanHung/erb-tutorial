@@ -1,6 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react';
 import ProductHolder from './components/ProductHolder';
+import SizeFilter from './components/SizeFilter';
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Button from '@mui/material/Button';
 
 
 const FakeApiCall = () => {
@@ -10,69 +18,94 @@ const FakeApiCall = () => {
         fetch('https://fakestoreapi.com/products', {
             // method: 'POST'
         })
-        .then(function (res) {
-            return res.json();
-        })
-        .then(function (data) {
-            const result = [];
-            console.log('data', data)
-            
-            for (let i = 0 ; i < data.length;  i += 3) {
-                let dataBlock0 = data[i];
-                let dataBlock1 = data[i+1]
-                let dataBlock2 = data[i+2]
+            .then(function (res) {
+                return res.json();
+            })
+            .then(function (data) {
+                const result = [];
+                console.log('data', data)
 
-                result.push(
-                    <div className="row">
-                        {
-                            dataBlock0 && <ProductHolder productData={dataBlock0} />
-                        }
-                        {
-                            dataBlock1 && <ProductHolder productData={dataBlock1} />
-                        }
-                        {
-                            dataBlock2 && <ProductHolder productData={dataBlock2} />
-                        }
-                    </div>
-                );
-            }
-            setProducts(result)
+                for (let i = 0; i < data.length; i += 3) {
+                    let dataBlock0 = data[i];
+                    let dataBlock1 = data[i + 1]
+                    let dataBlock2 = data[i + 2]
 
-            
-            // let tempAry = [];
-            // data.forEach((product, i) => {
+                    result.push(
+                        <div className="row">
+                            {
+                                dataBlock0 && <ProductHolder productData={dataBlock0} />
+                            }
+                            {
+                                dataBlock1 && <ProductHolder productData={dataBlock1} />
+                            }
+                            {
+                                dataBlock2 && <ProductHolder productData={dataBlock2} />
+                            }
+                        </div>
+                    );
+                }
+                setProducts(result)
 
-            //     if (i % 3 === 0) {
-                    
-            //         const tempData = [];
-                    
-            //         tempAry.forEach((itm) => {
-            //             tempData.push(<ProductHolder productData={itm} />);
-            //             result.push(<div className='row'>{tempData}</div>);
-            //         });
 
-            //         tempAry = [];
-            //     }
-                
-            //     tempAry.push(product);
-            // });
+                // let tempAry = [];
+                // data.forEach((product, i) => {
 
-            // console.log(result);
-            
-            // setProducts(result);
-            
-        });
+                //     if (i % 3 === 0) {
+
+                //         const tempData = [];
+
+                //         tempAry.forEach((itm) => {
+                //             tempData.push(<ProductHolder productData={itm} />);
+                //             result.push(<div className='row'>{tempData}</div>);
+                //         });
+
+                //         tempAry = [];
+                //     }
+
+                //     tempAry.push(product);
+                // });
+
+                // console.log(result);
+
+                // setProducts(result);
+
+            });
     }, []);
 
     return (
         <div className="container" id="products">
-        {
-            
-            products.map((product, i) => {
-                return <div key={i}>{product}</div>;
-            })
-            
-        }
+
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                >
+                    Color
+                </AccordionSummary>
+                <AccordionDetails>
+                    color component...
+                </AccordionDetails>
+            </Accordion>
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1-content"
+                    id="panel1-header"
+                >
+                    Size
+                </AccordionSummary>
+                <AccordionDetails>
+                    <SizeFilter />
+                </AccordionDetails>
+            </Accordion>
+
+
+            {
+                products.map((product, i) => {
+                    return <div key={i}>{product}</div>;
+                })
+            }
         </div>
     )
 }
