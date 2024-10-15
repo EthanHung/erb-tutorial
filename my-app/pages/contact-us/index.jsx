@@ -42,15 +42,26 @@ export default function ContactUs() {
       name: 'Katherine Johnson'
     }
   ];
+    const submit = (e) => {
+      e.preventDefault()
+      // console.log('submit')
+    };
+
+
     return (
       <section>
         <h1>Amazing scientists</h1>
-        {/* <Profile />
-        <Profile />
-        <Profile /> */}
+        
+        <form
+          action=""
+          onSubmit={submit}
+        >
+          <button type="submit">Btn</button>
+        </form>
+
         {
-          profiles.map(profile => 
-            <Profile src={profile.src} name={profile.name} />
+          profiles.map((profile, i) => 
+            <Profile key={i} src={profile.src} name={profile.name} />
           )
         }
       </section>
