@@ -1,0 +1,15 @@
+create the temp array (tempAry)
+create the final render array (result)
+
+loop all the items (products)
+each time get current item and index (product, i)
+add product into tempAry
+
+when i % 3 === 0
+create the .row add all tempAry items into .row,
+    then add .row into result,
+    clear tempAry items,
+    clear .row items
+
+loop all the items in products, suppose results 
+should be contains every products and each 3 items will wrap by .row

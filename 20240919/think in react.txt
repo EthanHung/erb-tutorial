@@ -1,0 +1,26 @@
+what we need to display in the user list?
+icon
+name
+loginId
+products
+    product name
+    role by user
+    status
+    final date
+
+JSON (final result)
+[
+    {
+        "icon": "",
+        "name": "",
+        "loginId": "",
+        "products": [
+            {
+                "productName": "",
+                "role": "",
+                "status": "",
+                "finalDate": "",
+            }
+        ]
+    }
+]
